@@ -1,0 +1,21 @@
+{
+  "name": "yaxgui",
+  "homepage": "https://github.com/sfeni/yaxgui",
+  "authors": [
+    "Sven Weiss <sfeni@sfeni.de>"
+  ],
+  "description": "Yet another xhprof GUI",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Chart.js": "chartjs-Chart.js#^2.1.6",
+    "AdminLTE": "adminlte#^2.3.3"
+  }
+}

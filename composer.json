@@ -1,0 +1,14 @@
+{
+    "name": "sfeni/yaxgui",
+    "description": "Yet another xhprof GUI",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Sven Weiss",
+            "email": "sfeni@sfeni.de"
+        }
+    ],
+    "require": {
+        "twig/twig": "^1.24"
+    }
+}

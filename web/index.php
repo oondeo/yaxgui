@@ -13,7 +13,7 @@ if (!defined('XHPROF_LIB_ROOT')) {
 require_once (XHPROF_LIB_ROOT . "/config.php");
 include_once XHPROF_LIB_ROOT . '/display/xhprof.php';
 include (XHPROF_LIB_ROOT . "/utils/common.php");
-// OLD START
+// OLD END
 
 $loader = new Twig_Loader_Filesystem(APP_ROOT . '/src/views');
 $twig = new Twig_Environment($loader, array(
@@ -23,8 +23,9 @@ $twig = new Twig_Environment($loader, array(
 ));
 $twig->addExtension(new Twig_Extension_Debug());
 
+// OLD START
 $xhprof_runs_impl = new XHProfRuns_Default();
-$last = (isset($_GET['last'])) ?  $_GET['last'] : 25;
+$last = (isset($_GET['last'])) ?  $_GET['last'] : 100;
 $last = (int) $last;
 $criteria['order by'] = "timestamp";
 $criteria['limit'] = $last;
@@ -33,5 +34,6 @@ $runs = array();
 while ($row = XHProfRuns_Default::getNextAssoc($resultSet)) {
     $runs[] = $row;
 }
+// OLD END
 
 echo $twig->render('index.html.twig', array('runs' => $runs));

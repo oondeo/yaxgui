@@ -52,9 +52,9 @@
                             <tr>
                                 <td><a href="index.php?run={{ run.id }}">{{ run.id }}</a></td>
                                 <td>{{ run.timestamp }}</td>
-                                <td>{{ run.cpu }}</td>
-                                <td>{{ run.wt }}</td>
-                                <td>{{ run.pmu }}</td>
+                                <td>{{ run.cpu|number_format }}</td>
+                                <td>{{ run.wt|number_format }}</td>
+                                <td>{{ run.pmu|number_format }}</td>
                                 <td>{{ run.url }}</td>
                                 <td>{{ run.c_url }}</td>
                             </tr>

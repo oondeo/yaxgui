@@ -1,0 +1,33 @@
+{% extends "layout.html.twig" %}
+
+{% block javascripts %}
+    <script>
+        $(function () {
+            $('#runsTable').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+<section class="content-header">
+    <h1>
+        Data Tables
+        <small>advanced tables</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="index.php"><i class="fa fa-dashboard"></i> YaxGUI</a></li>
+        <li class="active">Profile Run</li>
+    </ol>
+</section>
+
+<section class="content">
+    {{ dump(run) }}
+</section>
+{% endblock %}

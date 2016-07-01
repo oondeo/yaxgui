@@ -25,15 +25,24 @@ $twig->addExtension(new Twig_Extension_Debug());
 
 // OLD START
 $xhprof_runs_impl = new XHProfRuns_Default();
-$last = (isset($_GET['last'])) ?  $_GET['last'] : 100;
-$last = (int) $last;
-$criteria['order by'] = "timestamp";
-$criteria['limit'] = $last;
-$resultSet = $xhprof_runs_impl->getRuns($criteria);
-$runs = array();
-while ($row = XHProfRuns_Default::getNextAssoc($resultSet)) {
-    $runs[] = $row;
-}
 // OLD END
 
-echo $twig->render('index.html.twig', array('runs' => $runs));
+if(isset($_GET['run'])) {
+    list($xhprof_data, $run_details) = $xhprof_runs_impl->get_run($_GET['run'], $source, $description);
+
+    echo $twig->render('detail.html.twig', array('run' => array('data' => $xhprof_data, 'details' => $run_details)));
+} else {
+// OLD START
+    $last = (isset($_GET['last'])) ?  $_GET['last'] : 100;
+    $last = (int) $last;
+    $criteria['order by'] = "timestamp";
+    $criteria['limit'] = $last;
+    $resultSet = $xhprof_runs_impl->getRuns($criteria);
+    $runs = array();
+    while ($row = XHProfRuns_Default::getNextAssoc($resultSet)) {
+        $runs[] = $row;
+    }
+// OLD END
+
+    echo $twig->render('index.html.twig', array('runs' => $runs));
+}

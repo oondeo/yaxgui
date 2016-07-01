@@ -30,7 +30,7 @@ $xhprof_runs_impl = new XHProfRuns_Default();
 if(isset($_GET['run'])) {
     list($xhprof_data, $run_details) = $xhprof_runs_impl->get_run($_GET['run'], $source, $description);
 
-    echo $twig->render('detail.html.twig', array('run' => array('data' => $xhprof_data, 'details' => $run_details)));
+    echo $twig->render('detail.html.twig', array('run' => array('details' => $run_details, 'data' => $xhprof_data)));
 } else {
 // OLD START
     $last = (isset($_GET['last'])) ?  $_GET['last'] : 100;

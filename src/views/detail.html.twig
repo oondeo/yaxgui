@@ -28,6 +28,42 @@
 </section>
 
 <section class="content">
+    <div class="row">
+        <div class="col-sm-4 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-aqua"><i class="fa fa-clock-o"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Wall Time</span>
+                    <span class="info-box-number">{{ run.details.wt|number_format }} <small>microsec</small></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-red"><i class="fa fa-gear"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">CPU</span>
+                    <span class="info-box-number">{{ run.details.cpu|number_format }} <small>microsec</small></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix visible-sm-block"></div>
+
+        <div class="col-sm-4 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-green"><i class="fa fa-server"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Peak Memory Usage</span>
+                    <span class="info-box-number">{{ run.details.pmu|number_format }} <small>bytes</small></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     {{ dump(run) }}
 </section>
 {% endblock %}

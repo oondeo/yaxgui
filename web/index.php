@@ -28,7 +28,7 @@ $xhprof_runs_impl = new XHProfRuns_Default();
 // OLD END
 
 if(isset($_GET['run']) && count(explode(',', $_GET['run'])) == 1) {
-    list($xhprof_data, $run_details) = $xhprof_runs_impl->get_run($_GET['run'], $source, $description);
+    list($xhprof_data, $run_details) = $xhprof_runs_impl->get_run($_GET['run'], null, $description);
 
     echo $twig->render('detail.html.twig', array('run' => array('details' => $run_details, 'data' => $xhprof_data)));
 } else if(isset($_GET['run']) && count(explode(',', $_GET['run'])) > 1) {

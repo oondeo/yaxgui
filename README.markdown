@@ -10,13 +10,19 @@ YaxGUI will only support tideways because all other extensions will not be updat
 I took the preinheimer/xhprof and removed the extension because I only want a GUI with MySQL and PDO.
 The fork I am now running will be changed step by step... So...
 
+In progess in this branch
+-------------------------
+
+* Better UI (I think about [AdminLTE](https://github.com/almasaeed2010/AdminLTE) )
+* Using Twig Template Engine
+* Charts with [ChartJS](https://github.com/chartjs/Chart.js)
+* working with first composer and bower packages
+
 I am working on
 -----------------
 
 * Naming of methods/functions have xhprof (can be better...)
 * perhaps switch to doctrine
-* Better UI (I think about [AdminLTE](https://github.com/almasaeed2010/AdminLTE) )
-* Charts with [ChartJS](https://github.com/chartjs/Chart.js)
 * working with composer and bower packages
 
 Done

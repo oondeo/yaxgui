@@ -17,8 +17,13 @@ class Db_Pdo extends Db_Abstract {
     }
 
     public function connect() {
-        $connectionString = $this->config['dbtype'] . ':host=' . $this->config['dbhost'] . ';dbname=' . $this->config['dbname'];
-        $db = new PDO($connectionString, $this->config['dbuser'], $this->config['dbpass']);
+        if ($this->config['dbtype'] == "sqlite"){
+            $connectionString = $this->config['dbtype'] . ':' . $this->config['dbname'];
+            $db = new PDO($connectionString);
+        }else{
+            $connectionString = $this->config['dbtype'] . ':host=' . $this->config['dbhost'] . ';dbname=' . $this->config['dbname'];
+            $db = new PDO($connectionString, $this->config['dbuser'], $this->config['dbpass']);
+        }
         if ($db === FALSE) {
             xhprof_error("Could not connect to db");
             $run_desc = "could not connect to db";
